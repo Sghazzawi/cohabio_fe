@@ -8,6 +8,10 @@ body {
   font-size: 14px;
 }
 
+.navbar .btn-navbar.menubtn{
+  display: block;
+}
+
 .app-container {
   padding: 10px;
 }
