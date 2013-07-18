@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('myApp.controllers', ['ui.bootstrap']).
   controller('MyCtrl1', ['$scope','$http',function($scope, $http) {
 	$http({method: 'GET', url: '/Inhabitant/0'}).
 	success(function(data, status, headers, config) {
