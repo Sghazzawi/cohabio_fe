@@ -4,11 +4,6 @@
 
 
 angular.module('myApp.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
-    };
-  }]).
   directive('inhabitantEl', function(){
     return {
       restrict: 'C',
@@ -19,8 +14,7 @@ angular.module('myApp.directives', []).
         inhabitant: '=inhabitant'
       }
     };
-  })
-  .
+  }).
   directive('taskEl', function() {
     return {
       restrict: 'C',
@@ -48,6 +42,16 @@ angular.module('myApp.directives', []).
       templateUrl: '/app/partials/residenceView.html',
       scope: {
         residence: '=residence'
+      }
+    };
+  }).
+  directive('notificationListEl', function() {
+    return {
+      restrict: 'C',
+      replace: false,
+      templateUrl: '/app/partials/notificationListView.html',
+      scope: {
+        notificationList: '=notificationList'
       }
     };
   }).
