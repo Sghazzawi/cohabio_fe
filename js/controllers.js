@@ -3,11 +3,18 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['ui.bootstrap']).
-  controller('MyCtrl1', ['$scope','$http',function($scope, $http) {
-	$http({method: 'GET', url: '/Inhabitant/0'}).
+  controller('MyCtrl1', ['$scope','$http', Residence ,function($scope, $http, Residence) {
+	/**$http({method: 'GET', url: '/Inhabitant/0'}).
 	success(function(data, status, headers, config) {
 		$scope.inhabitant = data;
-	});
+	});*/
+   $scope.residence = Residence.get({residenceId:0}, function() {
+    $scope.residence.prototype.addTask = function(task){
+      this.tasks.push(task);
+      $scope.residence.save();
+    };
+
+   });
 
   }])
   .controller('MyCtrl2', [function() {
