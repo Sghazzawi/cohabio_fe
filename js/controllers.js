@@ -9,7 +9,7 @@ angular.module('myApp.controllers', ['ui.bootstrap']).
 		$scope.inhabitant = data;
 	});*/
    $scope.residence = Residence.get({residenceId:0}, function(residence){
-    residence.prototype.addTask = function(task){
+    residence.constructor.prototype.addTask = function(task){
       this.tasks.push(task);
       this.save();
     };
