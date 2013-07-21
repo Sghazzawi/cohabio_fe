@@ -11,7 +11,7 @@ angular.module('myApp.services', ['ngResource']).
 	residence.prototype.addChore = function(chore){
 		var Task = $resource('/Residence/:residenceId/Chores/:taskId');
     var task = new Task(chore);
-    task.save();
+    task.$save();
   };
 	return residence;
   }).
