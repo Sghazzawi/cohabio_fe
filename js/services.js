@@ -9,7 +9,7 @@ angular.module('myApp.services', ['ngResource']).
   factory('Residence',function($resource){
 	var residence = $resource('/Residence/:residenceId');
 	residence.prototype.addChore = function(chore){
-		var Task = $resource('/Residence/:residenceId/Chores/:taskId');
+		var Task = $resource('/Residence/'+this.id+'/Chores/:taskId');
     var task = new Task(chore);
     task.$save();
   };
