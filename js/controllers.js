@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['ui.bootstrap']).
-  controller('MyCtrl1', ['$scope','$http', Residence ,function($scope, $http, Residence) {
+  controller('MyCtrl1', ['$scope','$http', 'Residence' ,function($scope, $http, Residence) {
 	/**$http({method: 'GET', url: '/Inhabitant/0'}).
 	success(function(data, status, headers, config) {
 		$scope.inhabitant = data;
