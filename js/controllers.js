@@ -9,7 +9,7 @@ angular.module('myApp.controllers', ['ui.bootstrap']).
 		$scope.inhabitant = data;
 	});*/
    $scope.residence = Residence.get({residenceId:0}, function(residence){
-    console.dir(residence);
+    residence.addChore({'title':'walk dog', 'description':'walk dog'});
    });
 
 
