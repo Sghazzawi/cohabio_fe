@@ -8,13 +8,11 @@ angular.module('myApp.controllers', ['ui.bootstrap']).
 	success(function(data, status, headers, config) {
 		$scope.inhabitant = data;
 	});*/
-   $scope.residence = Residence.get({residenceId:0}, function() {
-    $scope.residence.prototype.addTask = function(task){
+   $scope.residence = Residence.get({residenceId:0});
+   $scope.residence.prototype.addTask = function(task){
       this.tasks.push(task);
-      $scope.residence.save();
-    };
-
-   });
+      this.save();
+   };
 
   }])
   .controller('MyCtrl2', [function() {
